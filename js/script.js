@@ -47,8 +47,4 @@ var games = [
 
 var gameContainer = document.querySelector(".games");
 
-for (var i = 0; i < games.rating; i++) {
-    if (games.rating < 3.5) {
-        gameContainer.innerHTML = "<li>" + games.title + " - " + games.rating + "</li>";
-    }
-}
+for (var i = 0; i < games.length; i++) 
