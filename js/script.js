@@ -47,4 +47,6 @@ var games = [
 
 var gameContainer = document.querySelector(".games");
 
-for (var i = 0; i < games.length; i++) 
+for (var i = 0; i <= games.length; i++) {
+    console.log(i);
+}
