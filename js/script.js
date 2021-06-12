@@ -22,6 +22,8 @@ for (var i = 15; i <= 25; i++) {
 
 // Question 3
 
+var gameContainer = document.querySelector(".games");
+
 var games = [
 	{
 		title: "Grand Theft Auto",
@@ -45,9 +47,7 @@ var games = [
 	},
 ];
 
-var gameContainer = document.querySelector(".games");
-
-for (var i = 0; i <= games.length; i++) {
+for (var i = 0; i < games.length; i++) {
     if (games[i].rating < 3.5) {
 	gameContainer.innerHTML+= "<li>" + games[i].title + " - " + games[i].rating + "</li>";
 	} 
