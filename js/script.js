@@ -50,3 +50,39 @@ var gameContainer = document.querySelector(".games");
 for (var i = 0; i <= games.length; i++) {
     console.log(i);
 }
+
+
+
+
+// Question 4
+
+function whatIDontLike(word) {
+	if (typeof word !== "string") 
+		console.log("Please send in a string");
+	else
+		console.log("I don't like " + word);
+	
+	
+} 
+
+whatIDontLike("fish");
+
+
+
+// Question 5
+
+function subtraction(firstNumber, secondNumber) {
+	var convertedFirst = parseFloat(firstNumber);
+	var convertedSecond = parseFloat(secondNumber);
+	
+	if ((typeof convertedFirst !== "number") || (typeof convertedSecond !== "number")) {
+		console.log("Invalid argument(s)");
+	}
+	else return firstNumber - secondNumber
+}
+
+var result = subtraction(50, 10);
+
+subContainer = document.querySelector("#subtraction");
+
+subContainer.innerHTML += result;
