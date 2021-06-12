@@ -48,9 +48,10 @@ var games = [
 var gameContainer = document.querySelector(".games");
 
 for (var i = 0; i <= games.length; i++) {
-    console.log(i);
+    if (games[i].rating < 3.5) {
+	gameContainer.innerHTML+= "<li>" + games[i].title + " - " + games[i].rating + "</li>";
+	} 
 }
-
 
 
 
@@ -72,8 +73,8 @@ whatIDontLike("fish");
 // Question 5
 
 function subtraction(firstNumber, secondNumber) {
-	var convertedFirst = parseFloat(firstNumber);
-	var convertedSecond = parseFloat(secondNumber);
+	var convertedFirst = parseInt(firstNumber);
+	var convertedSecond = parseInt(secondNumber);
 	
 	if ((typeof convertedFirst !== "number") || (typeof convertedSecond !== "number")) {
 		console.log("Invalid argument(s)");
@@ -81,8 +82,26 @@ function subtraction(firstNumber, secondNumber) {
 	else return firstNumber - secondNumber
 }
 
-var result = subtraction(50, 10);
+var result = subtraction(140, 10);
 
 subContainer = document.querySelector("#subtraction");
 
 subContainer.innerHTML += result;
+
+
+
+// Question 6
+
+buttonPage = document.querySelector(".page");
+
+var header = document.querySelector("title");
+var heading = document.querySelector("h1");
+
+buttonPage.onclick = function() {
+	header.innerHTML = "Updated title";
+	document.body.style.backgroundColor = "yellow";
+	heading.style.color = "green";
+	heading.style.fontFamily = "impact";
+	heading.innerHTML += "<a>" + "</a>";
+}
+
