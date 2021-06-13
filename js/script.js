@@ -98,14 +98,16 @@ var header = document.querySelector("title");
 var heading = document.querySelector("h1");
 var list = document.querySelector("ul");
 
-
-buttonPage.onclick = function() {
+function buttonClick() {
 	header.innerHTML = "Updated title";
 	document.body.style.backgroundColor = "yellow";
 	heading.style.color = "green";
 	heading.style.fontFamily = "impact";
+	heading.innerHTML = "<a href="#">Programming Foundations Course Assignment</a>";
 	list.style.listStyleType = "none";
 }
+
+buttonPage.onclick = buttonClick;
 
 
 
@@ -130,14 +132,14 @@ var toys = [
 	},
 ];
 
+
 buttonPrice = document.querySelector(".price");
 totalContainer = document.querySelector("#total");
 
-var total = toys[0].price + parseInt(toys[1].price) + toys[3].price;
-
-for (var i = 0; i = toys.length; i++) {
-	totalContainer.innerHTML = total;
+function priceButtonClick() {
+	totalContainer.innerHTML = toys[0].price + parseInt(toys[1].price) + toys[3].price;
 }
 
-
-buttonPrice.onclick = addTotal;
+for (var i = 0; i < toys.length; i++) {
+	buttonPrice.onclick = priceButtonClick;
+}
