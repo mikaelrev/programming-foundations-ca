@@ -96,12 +96,48 @@ buttonPage = document.querySelector(".page");
 
 var header = document.querySelector("title");
 var heading = document.querySelector("h1");
+var list = document.querySelector("ul");
+
 
 buttonPage.onclick = function() {
 	header.innerHTML = "Updated title";
 	document.body.style.backgroundColor = "yellow";
 	heading.style.color = "green";
 	heading.style.fontFamily = "impact";
-	heading.innerHTML += "<a>" + "</a>";
+	list.style.listStyleType = "none";
 }
 
+
+
+// Question 7
+
+var toys = [
+	{
+		name: "Lego",
+		price: 15.6,
+	},
+	{
+		name: "Master of the Universe",
+		price: "28.3",
+	},
+	{
+		name: "Barbie",
+		price: null,
+	},
+	{
+		name: "Mr Potato Head",
+		price: 89.99,
+	},
+];
+
+buttonPrice = document.querySelector(".price");
+totalContainer = document.querySelector("#total");
+
+var total = toys[0].price + parseInt(toys[1].price) + toys[3].price;
+
+for (var i = 0; i = toys.length; i++) {
+	totalContainer.innerHTML = total;
+}
+
+
+buttonPrice.onclick = addTotal;
