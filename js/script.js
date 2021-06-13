@@ -72,21 +72,24 @@ whatIDontLike("fish");
 
 // Question 5
 
-function subtraction(firstNumber, secondNumber) {
-	var convertedFirst = parseInt(firstNumber);
-	var convertedSecond = parseInt(secondNumber);
-	
-	if ((typeof convertedFirst !== "number") || (typeof convertedSecond !== "number")) {
-		console.log("Invalid argument(s)");
-	}
-	else return firstNumber - secondNumber
-}
-
-var result = subtraction(140, 10);
-
 subContainer = document.querySelector("#subtraction");
 
-subContainer.innerHTML += result;
+function subtraction(firstNumber, secondNumber) {
+	var convertedNum1 = parseFloat(firstNumber);
+	var convertedNum2 = parseFloat(secondNumber);
+	
+	
+	if (isNaN(convertedNum1) || isNaN(convertedNum2)) {
+		return "Invalid argument(s)";
+	}
+	
+	return firstNumber - secondNumber;
+}
+
+
+var result = subtraction("200", 100);
+
+subContainer.innerHTML = result;
 
 
 
@@ -103,7 +106,7 @@ function buttonClick() {
 	document.body.style.backgroundColor = "yellow";
 	heading.style.color = "green";
 	heading.style.fontFamily = "impact";
-	heading.innerHTML = "<a href="#">Programming Foundations Course Assignment</a>";
+	heading.innerHTML = "<a href=>Programming Foundations Course Assignment</a>";
 	list.style.listStyleType = "none";
 }
 
@@ -136,6 +139,7 @@ var toys = [
 buttonPrice = document.querySelector(".price");
 totalContainer = document.querySelector("#total");
 
+// Couldn't figure out how to convert null to zero
 function priceButtonClick() {
 	totalContainer.innerHTML = toys[0].price + parseInt(toys[1].price) + toys[3].price;
 }
